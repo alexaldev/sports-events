@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/default_large"
+        android:paddingVertical="@dimen/default_small"
+        android:elevation="5dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/sport_circle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/circle_red"
+            android:importantForAccessibility="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sport_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_medium"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/sport_circle"
+            app:layout_constraintStart_toEndOf="@id/sport_circle"
+            app:layout_constraintTop_toTopOf="@id/sport_circle"
+            tools:text="Sport" />
+
+        <ImageView
+            android:id="@+id/sport_expand"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@string/expand_collapse_description"
+            android:src="@drawable/ic_arrow_collapse"
+            app:layout_constraintBottom_toBottomOf="@id/sport_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/favorite_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_medium"
+            app:layout_constraintBottom_toBottomOf="@id/sport_circle"
+            app:layout_constraintEnd_toStartOf="@id/sport_expand"
+            app:layout_constraintTop_toTopOf="@id/sport_circle" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/events_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
